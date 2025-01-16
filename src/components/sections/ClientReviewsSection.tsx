@@ -1,14 +1,14 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation ,Autoplay} from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { ChevronDown, ChevronUp, Quote } from "lucide-react";
 import Marquee from "react-fast-marquee";
 import { Card } from "../ui/card-hover-effect";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import "swiper/css/autoplay"; 
-import Image from 'next/image';
+import "swiper/css/autoplay";
+import Image from "next/image";
 const ClientReviewsSection: React.FC = () => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
@@ -64,18 +64,21 @@ const ClientReviewsSection: React.FC = () => {
               },
             }}
             autoplay={{
-              delay: 3000, // Time in milliseconds between slides
-              disableOnInteraction: false, // Keep autoplay active even after interaction
+              delay: 3000,
+              disableOnInteraction: false,
             }}
             className="max-h-[350px]"
             direction="vertical"
-            modules={[Navigation,Autoplay]}
+            modules={[Navigation, Autoplay]}
             loop={true}
             navigation={{
               prevEl: prevRef.current,
               nextEl: nextRef.current,
             }}
-           
+            onBeforeInit={(swiper: any) => {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+            }}
             slidesPerView={1}
             spaceBetween={10}
           >
@@ -149,7 +152,7 @@ const ClientReviewsSection: React.FC = () => {
                 <Image src="https://www.mscorpres.com/assets/kortek.png" layout="responsive" width={100} height={100} alt="" className="w-[100px] grayscale hover:grayscale-0 transition opacity-50 hover:opacity-100 " />
                 <Image src="https://www.mscorpres.com/assets/oktar.png" layout="responsive" width={100} height={100} alt="" className="w-[100px] grayscale hover:grayscale-0 transition opacity-50 hover:opacity-100 " />
                 <Image src="https://www.mscorpres.com/assets/paytm.png" layout="responsive" width={100} height={100} alt="" className="w-[100px] grayscale hover:grayscale-0 transition opacity-50 hover:opacity-100 " />
-                <Image src="https://www.mscorpres.com/assets/vans.png"layout="responsive" width={100} height={100} alt="" className="w-[100px] grayscale hover:grayscale-0 transition opacity-50 hover:opacity-100 " />
+                <Image src="https://www.mscorpres.com/assets/vans.png" layout="responsive" width={100} height={100} alt="" className="w-[100px] grayscale hover:grayscale-0 transition opacity-50 hover:opacity-100 " />
                 <Image src="https://www.mscorpres.com/assets/amazech.png" layout="responsive" width={100} height={100} alt="" className="w-[100px] grayscale hover:grayscale-0 transition opacity-50 hover:opacity-100 " />
               </div>
             </Marquee>

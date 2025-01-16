@@ -53,11 +53,11 @@ const IntroSection: React.FC = () => {
       </div>
       <div className="grid items-center grid-cols-3 pb-5">
         <div className="flex flex-col justify-between h-full items-end py-[100px]">
-          <button className="flex items-center gap-4">
-            Supporting Indian Startups and MNCs <span className="bg-teal-600 w-[50px] h-[3px] rounded" />
+          <button onClick={() => setActive(0)} className={`flex items-center gap-4 ${active === 0 ? "text-teal-600" : ""}`}>
+            Supporting Indian Startups and MNCs <span className={` w-[50px] h-[3px] rounded ${active === 0 ? "bg-teal-600" : "bg-slate-600"}`} />
           </button>
-          <button className="flex items-center gap-4">
-            Transforming Vision Into Business Success <span className="bg-slate-600 w-[50px] h-[3px] rounded" />
+          <button onClick={() => setActive(1)} className={`flex items-center gap-4 ${active === 1 ? "text-teal-600" : ""}`}>
+            Transforming Vision Into Business Success <span className={` w-[50px] h-[3px] rounded ${active === 1 ? "bg-teal-600" : "bg-slate-600"}`} />
           </button>
         </div>
         <div className="flex items-center justify-center">
@@ -67,12 +67,12 @@ const IntroSection: React.FC = () => {
           </div>
         </div>
         <div className="flex flex-col justify-between h-full items-start py-[100px]">
-          <button className={`flex items-center gap-4 `}>
-            <span className="bg-slate-600 w-[50px] h-[3px] rounded" />
+          <button onClick={() => setActive(2)} className={`flex items-center gap-4 ${active === 2 ? "text-teal-600" : ""}`}>
+            <span className={` w-[50px] h-[3px] rounded ${active === 2 ? "bg-teal-600" : "bg-slate-600"}`} />
             Tailored Solutions For Every Business Function
           </button>
-          <button className="flex items-center gap-4">
-            <span className="bg-slate-600 w-[50px] h-[3px] rounded" />
+          <button onClick={() => setActive(3)} className={`flex items-center gap-4 ${active === 3 ? "text-teal-600" : ""}`}>
+            <span className={` w-[50px] h-[3px] rounded ${active === 3 ? "bg-teal-600" : "bg-slate-600"}`} />
             Streamlining Operations For Growth
           </button>
         </div>
