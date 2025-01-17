@@ -53,7 +53,9 @@ const page: React.FC = () => {
             <div className="flex items-center justify-center">
               <div className="py-[20px] space-y-1 max-w-[600px]">
                 <p className="text-teal-600 text-center text-[18px] font-[600]">At MsCorpres, our team follows five principles as its value</p>
-                <p className="text-sm text-white text-center">We are a company with a straightforward and simple vision and mission is &quot;To make our customers successful.&quot; We believe that your success is our business. To achieve our vision and mission, we bring customized</p>
+                <p className="text-sm text-white text-center">
+                  We are a company with a straightforward and simple vision and mission is &quot;To make our customers successful.&quot; We believe that your success is our business. To achieve our vision and mission, we bring customized
+                </p>
               </div>
             </div>
             <div className="py-[60px] grid grid-cols-2 gap-[30px] px-[30px]">
@@ -81,10 +83,9 @@ const page: React.FC = () => {
                 </ol>
               </div>
               <div className="p-[30px] relative">
-                <Image src={"/dotgrid.svg"} alt="" width={100} height={100} layout="responsive" className="max-w-[100px] max-h-[100px] absolute top-0 left-0 "/>
+                <Image src={"/dotgrid.svg"} alt="" width={100} height={100} layout="responsive" className="max-w-[100px] max-h-[100px] absolute top-0 left-0 " />
                 <div className="bottom-[-40px] absolute right-[50px] h-[300px] w-[300px]  border-[20px] border-teal-800 rounded-full"></div>
                 <Image src={"/team.svg"} alt="" width={400} height={300} layout="responsive" className="sticky w-full " />
-               
               </div>
             </div>
           </div>

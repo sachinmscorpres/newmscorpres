@@ -25,9 +25,11 @@ const Navigation: React.FC = () => {
               <Link href="/about">About</Link>
               <span className={pathname === "/about" ? "w-full h-[2px] bg-teal-600 transition-all" : "w-0 transition-all"}></span>
             </li>
-            <li>
-              <Link href="/">Sevices</Link>
+            <li className="flex flex-col ">
+              <Link href="/services">Services</Link>
+              <span className={pathname === "/services" ? "w-full h-[2px] bg-teal-600 transition-all" : "w-0 transition-all"}></span>
             </li>
+            
           </ul>
         </div>
         <Button className="bg-teal-600 text-white rounded-full hover:bg-teal-700">CMS LOGIN</Button>
