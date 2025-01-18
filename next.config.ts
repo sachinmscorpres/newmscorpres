@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ['images.pexels.com','encrypted-tbn0.gstatic.com','www.mscorpres.com'],
+    domains: ['images.pexels.com','encrypted-tbn0.gstatic.com','www.mscorpres.com','res.cloudinary.com'],
   },
 };
 

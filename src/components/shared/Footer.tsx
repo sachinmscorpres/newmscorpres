@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
       <div className="px-[100px] flex justify-between gap-[20px] flex-wrap">
         <div className="py-[50px] max-w-[350px] flex flex-col gap-[10px]">
           <div className="logo">
-            <Image src="/mslogo.png" width={200} height={50} alt="" className="max-w-[200px]"  layout="responsive" />
+            <Image src="/mslogo.png" width={200} height={50} alt="" className="max-w-[200px]" layout="responsive" />
           </div>
           <p className="text-slate-600 text-[13px]">Whether you are an Indian startup looking for support or an MNC planning to enter India, we can help you thrive in the tough market environment here.</p>
           <a href="#" className="text-sm">
@@ -90,6 +90,11 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <p className="text-sm text-center py-[20px]">
+          © Copyright <span className="text-teal-500">MsCorpres</span> | All Rights Reserved
+        </p>
       </div>
     </div>
   );
