@@ -12,7 +12,7 @@ const page: React.FC = () => {
       <div>
         <div className="header w-full h-[70vh]  bg-cover bg-center flex items-center justify-center">
           <div className="max-w-[600px]">
-            <h1 className="text-teal-600 text-[40px] font-bold text-center">About Us</h1>
+            <h1 className="text-teal-400 text-[40px] font-bold text-center">About Us</h1>
             <p className="text-white text-center">We aspire to become a trusted global execution partner for businesses, enabling success through innovation and excellence</p>
           </div>
         </div>

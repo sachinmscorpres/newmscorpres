@@ -11,7 +11,7 @@ const page: React.FC = () => {
       <div className="header w-full h-[80vh]  bg-cover bg-center flex items-center justify-center">
         <div className="grid grid-cols-2">
           <div className="px-[50px] space-y-2">
-            <h1 className="font-bold text-5xl text-teal-600">OUR TOP SERVICES</h1>
+            <h1 className="font-bold text-5xl text-teal-400">OUR TOP SERVICES</h1>
             <p className="text-white">
               At MSCorpres, our groundbreaking services are backed by a stellar team that turns business growth aspirations into reality. Guided by innovation and a positive mindset, our team&apos;s unique viewpoints lead the way. Meet our dedicated members and witness the embodiment
               of our core values in action.

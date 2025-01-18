@@ -29,6 +29,18 @@ const Navigation: React.FC = () => {
               <Link href="/services">Services</Link>
               <span className={pathname === "/services" ? "w-full h-[2px] bg-teal-600 transition-all" : "w-0 transition-all"}></span>
             </li>
+            <li className="flex flex-col ">
+              <Link href="/blog">BLOG</Link>
+              <span className={pathname === "/blog" ? "w-full h-[2px] bg-teal-600 transition-all" : "w-0 transition-all"}></span>
+            </li>
+            <li className="flex flex-col ">
+              <Link href="/career">Career</Link>
+              <span className={pathname === "/career" ? "w-full h-[2px] bg-teal-600 transition-all" : "w-0 transition-all"}></span>
+            </li>
+            <li className="flex flex-col ">
+              <Link href="/contact">Contact</Link>
+              <span className={pathname === "/contact" ? "w-full h-[2px] bg-teal-600 transition-all" : "w-0 transition-all"}></span>
+            </li>
             
           </ul>
         </div>
