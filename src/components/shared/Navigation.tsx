@@ -74,7 +74,7 @@ const Navigation: React.FC = () => {
       </Sheet>
 
       <nav className="fixed lg:top-[20px] lg:left-[100px] lg:right-[100px] top-[10px] left-[20px] right-[20px] z-50">
-        <div className="bg-white rounded-lg flex justify-between items-center lg:p-4 md:p-2 p-2 shadow-md">
+        <div className="backdrop-blur-sm bg-white/70 rounded-lg flex justify-between items-center lg:p-4 md:p-2 p-2 shadow-md">
           <div>
             <Image layout="responsive" width={300} height={50} src="/mslogo.png" alt="" className="max-w-[300px]" />
           </div>

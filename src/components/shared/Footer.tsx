@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
     console.log("submitted");
   };
   return (
-    <div className="border-t-2 lg:rounded-t-[100px] rounded-t-[50px] border-teal-600 overflow-hidden">
+    <div className="border-t-2 rounded-t-[100px] border-teal-600 overflow-hidden">
       <div className="lg:px-[100px] md:px-[50px] px-[20px] flex justify-between gap-[20px] flex-wrap">
         <div className="py-[50px] max-w-[350px] flex flex-col gap-[10px]">
           <div className="logo">
