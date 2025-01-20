@@ -15,7 +15,9 @@ const Navigation: React.FC = () => {
   const handleopenDialog = () => {
     setOpenDialog(true);
   };
-
+  const handlecloseDialog = () => {
+    setOpenDialog(false);
+  };
   return (
     <>
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>
@@ -38,29 +40,39 @@ const Navigation: React.FC = () => {
             <SheetTitle>Navigation</SheetTitle>
             <ul className="flex flex-col gap-[20px] uppercase">
               <li className="flex flex-col ">
-                <Link href="/" className={`${pathname === "/" ? "text-teal-600" : ""} font-[500] `}>
+                <Link href="/" onClick={() => setOpen(false)} className={`${pathname === "/" ? "text-teal-600" : ""} font-[500] `}>
                   Home
                 </Link>
                 <span className={pathname === "/" ? "w-full h-[2px] bg-teal-600 transition-all" : "w-0 transition-all"}></span>
               </li>
               <li className="flex flex-col ">
-                <Link href="/about">About</Link>
+                <Link onClick={() => setOpen(false)} href="/about">
+                  About
+                </Link>
                 <span className={pathname === "/about" ? "w-full h-[2px] bg-teal-600 transition-all" : "w-0 transition-all"}></span>
               </li>
               <li className="flex flex-col ">
-                <Link href="/services">Services</Link>
+                <Link onClick={() => setOpen(false)} href="/services">
+                  Services
+                </Link>
                 <span className={pathname === "/services" ? "w-full h-[2px] bg-teal-600 transition-all" : "w-0 transition-all"}></span>
               </li>
               <li className="flex flex-col ">
-                <Link href="/blog">BLOG</Link>
+                <Link onClick={() => setOpen(false)} href="/blog">
+                  BLOG
+                </Link>
                 <span className={pathname === "/blog" ? "w-full h-[2px] bg-teal-600 transition-all" : "w-0 transition-all"}></span>
               </li>
               <li className="flex flex-col ">
-                <Link href="/career">Career</Link>
+                <Link onClick={() => setOpen(false)} href="/career">
+                  Career
+                </Link>
                 <span className={pathname === "/career" ? "w-full h-[2px] bg-teal-600 transition-all" : "w-0 transition-all"}></span>
               </li>
               <li className="flex flex-col ">
-                <Link href="/contact">Contact</Link>
+                <Link onClick={() => setOpen(false)} href="/contact">
+                  Contact
+                </Link>
                 <span className={pathname === "/contact" ? "w-full h-[2px] bg-teal-600 transition-all" : "w-0 transition-all"}></span>
               </li>
             </ul>
