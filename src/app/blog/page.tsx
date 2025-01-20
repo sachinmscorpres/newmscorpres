@@ -8,7 +8,7 @@ import Link from "next/link";
 const page: React.FC = () => {
   return (
     <BlogLayout>
-      <div className="w-full grid grid-cols-2 gap-[30px]">
+      <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-[30px]">
         {Array.from({ length: 4 }).map((_, index) => (
           <Link key={index} href={`/blog/${index}`}>
             <Blogcard />
