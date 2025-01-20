@@ -1,6 +1,25 @@
-import { Building2, ChartNoAxesCombined, Handshake, Settings } from "lucide-react";
+import { Building2, ChartNoAxesCombined, ChevronLeft, ChevronRight, Handshake, Settings } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { Button } from "../ui/button";
+const titles = [
+  {
+    id: 1,
+    title: "Supporting Indian Startups and MNCs",
+  },
+  {
+    id: 2,
+    title: "Transforming Vision Into Business Success",
+  },
+  {
+    id: 3,
+    title: "Tailored Solutions For Every Business Function",
+  },
+  {
+    id: 4,
+    title: "Streamlining Operations For Growth",
+  },
+];
 const content = [
   {
     id: 1,
@@ -28,7 +47,7 @@ function renderContent(index: number) {
   return (
     <div className="animate-fadein flex items-center justify-center flex-col gap-[10px]">
       {content[index].icons}
-      <p className="text-center">{content[index].desc}</p>
+      <p className="text-center text-sm">{content[index].desc}</p>
     </div>
   );
 }
@@ -51,30 +70,52 @@ const IntroSection: React.FC = () => {
           <span className="text-teal-600">Our expert troubleshooting swiftly resolves operational challenges</span>, ensuring smooth, efficient business operations and sustained growth.
         </h3>
       </div>
-      <div className="grid items-center grid-cols-3 pb-5">
-        <div className="flex flex-col justify-between h-full items-end py-[100px]">
-          <button onClick={() => setActive(0)} className={`flex items-center gap-4 ${active === 0 ? "text-teal-600" : ""}`}>
-            Supporting Indian Startups and MNCs <span className={` w-[50px] h-[3px] rounded ${active === 0 ? "bg-teal-600" : "bg-slate-600"}`} />
-          </button>
-          <button onClick={() => setActive(1)} className={`flex items-center gap-4 ${active === 1 ? "text-teal-600" : ""}`}>
-            Transforming Vision Into Business Success <span className={` w-[50px] h-[3px] rounded ${active === 1 ? "bg-teal-600" : "bg-slate-600"}`} />
-          </button>
+      <div className="lg:block hidden">
+        <div className="grid items-center grid-cols-3 pb-5 ">
+          <div className="flex flex-col justify-between h-full items-end py-[100px]">
+            <button onClick={() => setActive(0)} className={`flex items-center gap-4 ${active === 0 ? "text-teal-600" : ""}`}>
+              Supporting Indian Startups and MNCs <span className={` w-[50px] h-[3px] rounded ${active === 0 ? "bg-teal-600" : "bg-slate-600"}`} />
+            </button>
+            <button onClick={() => setActive(1)} className={`flex items-center gap-4 ${active === 1 ? "text-teal-600" : ""}`}>
+              Transforming Vision Into Business Success <span className={` w-[50px] h-[3px] rounded ${active === 1 ? "bg-teal-600" : "bg-slate-600"}`} />
+            </button>
+          </div>
+          <div className="flex items-center justify-center">
+            <div className="w-[400px] h-[400px] relative rounded-full">
+              <Image alt="" width={400} height={400} src="/circle.svg" className="animate-slowSpin rounded-full w-full h-full" />
+              <div className="card bg-[url('/tealgr.jpg')] bg-cover bg-center bg-no-repeat top-[50px] bottom-[50px] left-[50px] right-[50px] absolute z-[1] rounded-br-[100px] rounded-tr-[50px] rounded-tl-[50px] p-[20px] text-white flex items-center justify-center">{renderContent(active)}</div>
+            </div>
+          </div>
+          <div className="flex flex-col justify-between h-full items-start py-[100px]">
+            <button onClick={() => setActive(2)} className={`flex items-center gap-4 ${active === 2 ? "text-teal-600" : ""}`}>
+              <span className={` w-[50px] h-[3px] rounded ${active === 2 ? "bg-teal-600" : "bg-slate-600"}`} />
+              Tailored Solutions For Every Business Function
+            </button>
+            <button onClick={() => setActive(3)} className={`flex items-center gap-4 ${active === 3 ? "text-teal-600" : ""}`}>
+              <span className={` w-[50px] h-[3px] rounded ${active === 3 ? "bg-teal-600" : "bg-slate-600"}`} />
+              Streamlining Operations For Growth
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className=" pb-5 lg:hidden block">
+        <div className="flex flex-col justify-between h-full px-[20px] ">
+          <div className="flex items-center justify-between">
+            <Button variant={"ghost"} onClick={() => setActive(active === 0 ? content.length - 1 : active - 1)}>
+              <ChevronLeft />
+            </Button>
+            <p className="text-teal-500">{titles[active].title} </p>
+            <Button variant={"ghost"} onClick={() => setActive(active === content.length - 1 ? 0 : active + 1)}>
+              <ChevronRight />
+            </Button>
+          </div>
         </div>
         <div className="flex items-center justify-center">
           <div className="w-[400px] h-[400px] relative rounded-full">
             <Image alt="" width={400} height={400} src="/circle.svg" className="animate-slowSpin rounded-full w-full h-full" />
-            <div className="card bg-teal-500 top-[50px] bottom-[50px] left-[50px] right-[50px] absolute z-[1] rounded-br-[100px] rounded-tr-[50px] rounded-tl-[50px] p-[20px] text-white flex items-center justify-center">{renderContent(active)}</div>
+            <div className="card bg-[url('/tealgr.jpg')] bg-cover bg-center bg-no-repeat  top-[50px] bottom-[50px] left-[30px] right-[30px] absolute z-[1] rounded-br-[100px] rounded-tr-[50px] rounded-tl-[50px] p-[20px] text-white flex items-center justify-center">{renderContent(active)}</div>
           </div>
-        </div>
-        <div className="flex flex-col justify-between h-full items-start py-[100px]">
-          <button onClick={() => setActive(2)} className={`flex items-center gap-4 ${active === 2 ? "text-teal-600" : ""}`}>
-            <span className={` w-[50px] h-[3px] rounded ${active === 2 ? "bg-teal-600" : "bg-slate-600"}`} />
-            Tailored Solutions For Every Business Function
-          </button>
-          <button onClick={() => setActive(3)} className={`flex items-center gap-4 ${active === 3 ? "text-teal-600" : ""}`}>
-            <span className={` w-[50px] h-[3px] rounded ${active === 3 ? "bg-teal-600" : "bg-slate-600"}`} />
-            Streamlining Operations For Growth
-          </button>
         </div>
       </div>
     </section>

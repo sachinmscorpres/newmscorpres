@@ -26,11 +26,11 @@ const ServiceSlider = () => {
           nextEl: ".next",
         }}
         modules={[Autoplay, Navigation]}
-        className="mySwiper  "
+        className="lg:w-[70%] w-full min-w-[300px]  "
         loop={true}
       >
         <SwiperSlide className="">
-          <div className="card grid grid-cols-2 relative">
+          <div className="card grid  relative lg:grid-cols-2 grid-cols-1">
             <div>
               <Image
                 src="https://images.pexels.com/photos/29836306/pexels-photo-29836306/free-photo-of-misty-forested-mountains-in-slovakia.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -55,7 +55,7 @@ const ServiceSlider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="">
-          <div className="card grid grid-cols-2 relative">
+          <div className="card card grid   lg:grid-cols-2 grid-cols-1 relative">
             <div>
               <Image
                 src="https://images.pexels.com/photos/29836306/pexels-photo-29836306/free-photo-of-misty-forested-mountains-in-slovakia.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -79,7 +79,7 @@ const ServiceSlider = () => {
             </div>
           </div>
         </SwiperSlide>
-        <div className=" text-white absolute top-0 right-0 flex gap-[10px] z-[10]">
+        <div className=" text-white absolute top-0 right-0 lg:flex hidden gap-[10px] z-[10] ">
           <Button className="prev">
             <ChevronLeft />
           </Button>

@@ -30,7 +30,7 @@ const ServiceSlider2 = () => {
         loop={true}
       >
         <SwiperSlide className="">
-          <div className="card grid grid-cols-2 relative">
+          <div className="card grid lg:grid-cols-2 grid-cols-1 relative">
             <div>
               <Image
                 src="https://images.pexels.com/photos/29836306/pexels-photo-29836306/free-photo-of-misty-forested-mountains-in-slovakia.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -42,9 +42,9 @@ const ServiceSlider2 = () => {
               />
             </div>
             <div className="text-slate-600 flex flex-col gap-[20px] justify-center">
-              <div className="flex items-center relative">
-                <span className="text-7xl font-bold  text-border absolute z-[-1]">01</span>
-                <h2 className=" text-5xl font-bold text-teal-600 ml-[50px] mt-[40px]">Production</h2>
+            <div className="flex items-center relative">
+                <span className="lg:text-7xl text-5xl font-bold  text-border absolute z-[-1]">02</span>
+                <h2 className=" lg:text-5xl text-4xl font-bold text-teal-600 lg:ml-[50px] ml-[40px] lg:mt-[40px] mt-[30px]">Production</h2>
               </div>
 
               <p>
@@ -55,7 +55,7 @@ const ServiceSlider2 = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="">
-          <div className=" grid grid-cols-2 relative">
+          <div className=" grid lg:grid-cols-2 grid-cols-1 relative">
             <div>
               <Image
                 src="https://images.pexels.com/photos/29836306/pexels-photo-29836306/free-photo-of-misty-forested-mountains-in-slovakia.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -68,8 +68,8 @@ const ServiceSlider2 = () => {
             </div>
             <div className="text-slate-600 flex flex-col gap-[20px] justify-center">
               <div className="flex items-center relative">
-                <span className="text-7xl font-bold  text-border absolute z-[-1]">02</span>
-                <h2 className=" text-5xl font-bold text-teal-600 ml-[50px] mt-[40px]">Production</h2>
+                <span className="lg:text-7xl text-5xl font-bold  text-border absolute z-[-1]">02</span>
+                <h2 className=" lg:text-5xl text-4xl font-bold text-teal-600 lg:ml-[50px] ml-[40px] lg:mt-[40px] mt-[30px]">Production</h2>
               </div>
 
               <p>
@@ -79,7 +79,7 @@ const ServiceSlider2 = () => {
             </div>
           </div>
         </SwiperSlide>
-        <div className=" text-white absolute top-0 right-0 flex gap-[10px] z-[10]">
+        <div className=" text-white absolute top-0 right-0  gap-[10px] z-[10] lg:flex hidden">
           <Button className="prev bg-white hover:bg-white text-slate-800">
             <ChevronLeft />
           </Button>
