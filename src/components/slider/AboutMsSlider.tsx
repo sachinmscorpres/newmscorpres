@@ -93,7 +93,7 @@ const Wrapper = styled.div`
   width: 100%;
 
   .swiper {
-    padding: 30px 30px;
+    padding: 30px 0;
   }
 `;
 

@@ -44,12 +44,10 @@ const Article = styled.article`
     font-weight: 500;
   }
 
-  /* Paragraphs */
   p {
     margin: 1em 0;
   }
 
-  /* Blockquotes */
   blockquote {
     font-style: italic;
     color: #555;
@@ -58,7 +56,6 @@ const Article = styled.article`
     margin: 1.5em 0;
   }
 
-  /* Links */
   a {
     color: #0077cc;
     text-decoration: none;
@@ -79,7 +76,6 @@ const Article = styled.article`
     margin-bottom: 0.5em;
   }
 
-  /* Code */
   code {
     font-family: "Courier New", monospace;
     background-color: #f4f4f4;
@@ -96,7 +92,6 @@ const Article = styled.article`
     font-size: 0.9em;
   }
 
-  /* Images */
   img {
     max-width: 100%;
     height: auto;
@@ -104,14 +99,12 @@ const Article = styled.article`
     margin: 1.5em 0;
   }
 
-  /* Horizontal Rules */
   hr {
     border: 0;
     height: 1px;
     background: #ddd;
     margin: 2em 0;
   }
-  /* General Table Styling */
 table {
  max-width: max-content;
   border-collapse: collapse;
@@ -119,12 +112,11 @@ table {
   font-size: 1rem;
   line-height: 1.5;
   text-align: left;
-  overflow-x: auto; /* Ensure responsiveness */
+  overflow-x: auto; 
   border: 1px solid #ddd;
   background-color: #f9f9f9;
 }
 
-/* Table Header Styling */
 thead {
   background-color: #f5f5f5;
 }
@@ -138,7 +130,6 @@ th {
   color: #333;
 }
 
-/* Table Body Styling */
 td {
   padding: 12px 16px;
   border-bottom: 1px solid #ddd;
@@ -146,7 +137,6 @@ td {
   color: #555;
 }
 
-/* Zebra Stripes */
 tbody tr:nth-child(odd) {
   background-color: #fcfcfc;
 }
@@ -155,19 +145,16 @@ tbody tr:nth-child(even) {
   background-color: #fff;
 }
 
-/* Highlight Row on Hover */
 tbody tr:hover {
   background-color: #f1f1f1;
 }
 
-/* Responsive Table */
 table {
   display: block;
   overflow-x: auto;
   white-space: nowrap;
 }
 
-/* Caption Styling (Optional) */
 caption {
   caption-side: bottom;
   font-size: 0.875rem;

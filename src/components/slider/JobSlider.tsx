@@ -54,7 +54,7 @@ const JobSlider = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <Card className="bg-teal-500 text-white overflow-hidden ">
+          <Card className="bg-[url('/tealgr.jpg')] bg-cover bg-center bg-no-repeat hover:bg-left-bottom text-white overflow-hidden ">
             <CardHeader className="flex flex-row items-center justify-between">
               <CardTitle className="text-white text-2xl">Executive</CardTitle>
               <Badge className="rounded-full bg-white/15 hover:bg-white/30 px-[10px] shadow-none">Open</Badge>
@@ -71,7 +71,7 @@ const JobSlider = () => {
           </Card>
         </SwiperSlide>
         <SwiperSlide>
-          <Card className="bg-teal-500 text-white overflow-hidden ">
+          <Card className="bg-[url('/tealgr.jpg')] bg-cover bg-center bg-no-repeat hover:bg-left-bottom text-white overflow-hidden ">
             <CardHeader className="flex flex-row items-center justify-between">
               <CardTitle className="text-white text-2xl">Executive</CardTitle>
               <Badge className="rounded-full bg-white/15 hover:bg-white/30 px-[10px] shadow-none">Open</Badge>
@@ -88,7 +88,7 @@ const JobSlider = () => {
           </Card>
         </SwiperSlide>
         <SwiperSlide>
-          <Card className="bg-teal-500 text-white overflow-hidden ">
+          <Card className="bg-[url('/tealgr.jpg')] bg-cover bg-center bg-no-repeat hover:bg-left-bottom text-white overflow-hidden ">
             <CardHeader className="flex flex-row items-center justify-between">
               <CardTitle className="text-white text-2xl">Executive</CardTitle>
               <Badge className="rounded-full bg-white/15 hover:bg-white/30 px-[10px] shadow-none">Open</Badge>
@@ -105,7 +105,7 @@ const JobSlider = () => {
           </Card>
         </SwiperSlide>
         <SwiperSlide>
-          <Card className="bg-teal-500 text-white overflow-hidden ">
+          <Card className="bg-[url('/tealgr.jpg')] bg-cover bg-center bg-no-repeat hover:bg-left-bottom text-white overflow-hidden ">
             <CardHeader className="flex flex-row items-center justify-between">
               <CardTitle className="text-white text-2xl">Executive</CardTitle>
               <Badge className="rounded-full bg-white/15 hover:bg-white/30 px-[10px] shadow-none">Open</Badge>
@@ -121,6 +121,7 @@ const JobSlider = () => {
             </CardFooter>
           </Card>
         </SwiperSlide>
+       
       </Swiper>
     </Wrapper>
   );

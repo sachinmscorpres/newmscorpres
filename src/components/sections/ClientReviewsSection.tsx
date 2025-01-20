@@ -13,14 +13,14 @@ const ClientReviewsSection: React.FC = () => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   return (
-    <div className="custom-swiper px-[100px] my-[100px]">
-      <div className="grid grid-cols-[1fr_2fr] w-full gap-[50px] ">
+    <div className="custom-swiper lg:px-[100px] md:px-[50px]  px-[20px] my-[100px]">
+      <div className="grid lg:grid-cols-[1fr_2fr] grid-cols-1 w-full gap-[50px] ">
         <div>
           <h3 className="text-[18px] font-bold">Client Review</h3>
           <h2 className="text-2xl">Customized Solutions to Meet Client Needs.</h2>
           <p className="text-slate-500">We help our clients build strong systems that get things done and lead to great achievements.</p>
           <div className="flex  gap-[20px] mt-[20px]">
-            <div className="relative rounded-md overflow-hidden border">
+            <div className="relative rounded-md overflow-hidden border w-[300px] lg:h-[300px] md:h-[300px] h-auto">
               <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrg2YUhElZZVIYyQXBMPcca-fSpWLJoOtplw&s" alt="" layout="responsive" width={300} height={300} />
               <div className="absolute bottom-0 left-0 right-0 p-[5px] bg-teal-600/40 rounded-md text-white flex items-center justify-center">Sachin</div>
             </div>
