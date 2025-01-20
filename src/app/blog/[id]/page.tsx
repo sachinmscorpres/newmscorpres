@@ -13,6 +13,7 @@ interface BlogPostPageProps {
 
 const Article = styled.article`
   padding: 0 100px;
+
   h1,
   h2,
   h3,
@@ -105,65 +106,159 @@ const Article = styled.article`
     background: #ddd;
     margin: 2em 0;
   }
-table {
- max-width: max-content;
-  border-collapse: collapse;
-  margin: 1.5em 0;
-  font-size: 1rem;
-  line-height: 1.5;
-  text-align: left;
-  overflow-x: auto; 
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
-}
 
-thead {
-  background-color: #f5f5f5;
-}
+  table {
+    max-width: max-content;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+  }
 
-th {
-  padding: 12px 16px;
-  font-weight: bold;
-  border-bottom: 2px solid #ddd;
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  color: #333;
-}
+  thead {
+    background-color: #f5f5f5;
+  }
 
-td {
-  padding: 12px 16px;
-  border-bottom: 1px solid #ddd;
-  vertical-align: middle;
-  color: #555;
-}
+  th {
+    padding: 12px 16px;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    color: #333;
+  }
 
-tbody tr:nth-child(odd) {
-  background-color: #fcfcfc;
-}
+  td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+    color: #555;
+  }
 
-tbody tr:nth-child(even) {
-  background-color: #fff;
-}
+  tbody tr:nth-child(odd) {
+    background-color: #fcfcfc;
+  }
 
-tbody tr:hover {
-  background-color: #f1f1f1;
-}
+  tbody tr:nth-child(even) {
+    background-color: #fff;
+  }
 
-table {
-  display: block;
-  overflow-x: auto;
-  white-space: nowrap;
-}
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
 
-caption {
-  caption-side: bottom;
-  font-size: 0.875rem;
-  color: #777;
-  margin-top: 0.5em;
-  text-align: center;
-}
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 
+  caption {
+    caption-side: bottom;
+    font-size: 0.875rem;
+    color: #777;
+    margin-top: 0.5em;
+    text-align: center;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    padding: 0 50px;
+
+    h1 {
+      font-size: 2.25em;
+    }
+
+    h2 {
+      font-size: 1.75em;
+    }
+
+    h3 {
+      font-size: 1.5em;
+    }
+
+    h4 {
+      font-size: 1.25em;
+    }
+
+    table {
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 10px 12px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+
+    h1 {
+      font-size: 2em;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
+
+    h3 {
+      font-size: 1.25em;
+    }
+
+    h4 {
+      font-size: 1.125em;
+    }
+
+    pre {
+      font-size: 0.85em;
+    }
+
+    table {
+      font-size: 0.8rem;
+    }
+
+    th, td {
+      padding: 8px 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 10px;
+
+    h1 {
+      font-size: 1.75em;
+    }
+
+    h2 {
+      font-size: 1.25em;
+    }
+
+    h3 {
+      font-size: 1.1em;
+    }
+
+    h4 {
+      font-size: 1em;
+    }
+
+    pre {
+      font-size: 0.75em;
+    }
+
+    table {
+      font-size: 0.75rem;
+    }
+
+    th, td {
+      padding: 6px 8px;
+    }
+  }
 `;
+
 export default function BlogPost({ params }: BlogPostPageProps) {
   const { id } = React.use(params);
   console.log(id);

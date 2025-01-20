@@ -6,7 +6,6 @@ import Image from "next/image";
 import styled from "styled-components";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-
 type Props = {
   children: React.ReactNode;
 };
@@ -15,7 +14,7 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
     <Section>
       <div className="header h-[80vh] flex items-center justify-center bg-center bg-cover">
         <div className="max-w-[600px] flex items-center justify-center flex-col gap-[10px]">
-          <h1 className="text-5xl font-bold text-center text-teal-400">Blog</h1>
+          <h1 className="lg:text-5xl text-3xl font-bold text-center text-teal-400">Blog</h1>
           <p className="text-center text-white">Empowering productivity and efficiency with cutting-edge solutions—welcome to the future of work</p>
           <Select>
             <SelectTrigger className="w-[300px] bg-white rounded-full">
@@ -29,10 +28,10 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
           </Select>
         </div>
       </div>
-      <div className="py-[50px] px-[30px]">
-        <div className="flex gap-[20px]">
+      <div className="py-[50px] lg:px-[30px] md:px-[20px] px-[10px]">
+        <div className="flex lg:flex-row flex-col gap-[20px]">
           <div className="w-full">{children}</div>
-          <div className="min-w-[300px] max-w-[300px]">
+          <div className="min-w-[300px] lg:max-w-[300px] w-full">
             <div className="category">
               <h3 className="text-slate-600 text-[20px] font-semibold">Categories</h3>
               <Separator />
