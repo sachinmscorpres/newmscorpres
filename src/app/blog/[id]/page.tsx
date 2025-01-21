@@ -189,7 +189,8 @@ const Article = styled.article`
       font-size: 0.9rem;
     }
 
-    th, td {
+    th,
+    td {
       padding: 10px 12px;
     }
   }
@@ -221,7 +222,8 @@ const Article = styled.article`
       font-size: 0.8rem;
     }
 
-    th, td {
+    th,
+    td {
       padding: 8px 10px;
     }
   }
@@ -253,7 +255,8 @@ const Article = styled.article`
       font-size: 0.75rem;
     }
 
-    th, td {
+    th,
+    td {
       padding: 6px 8px;
     }
   }
@@ -275,6 +278,7 @@ export default function BlogPost({ params }: BlogPostPageProps) {
         <Head>
           <title>Comprehensive Blog Post</title>
           <meta name="description" content="Comprehensive dummy blog post for testing CSS styles" />
+          <meta name="google-site-verification" content="KKOvYSdxhIKXdM5mcrwSqgylO-ZYk3OsBaAKfF59F0s" />
         </Head>
         <article>
           <header>
@@ -329,7 +333,7 @@ export default function BlogPost({ params }: BlogPostPageProps) {
             <section>
               <h2>Blockquote</h2>
               <blockquote>
-              &quot;This is an example of a blockquote. It is used to highlight important quotes or excerpts.&quot;
+                &quot;This is an example of a blockquote. It is used to highlight important quotes or excerpts.&quot;
                 <footer>— Someone Famous</footer>
               </blockquote>
             </section>
