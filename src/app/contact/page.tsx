@@ -7,6 +7,15 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
+export const metadata = {
+  title: "Contact Us | MsCorpres Automation",
+};
+
+export const Head = () => (
+  <>
+    <meta name="google-site-verification" content="KKOvYSdxhIKXdM5mcrwSqgylO-ZYk3OsBaAKfF59F0s" />
+  </>
+);
 const page: React.FC = () => {
   return (
     <Section>
@@ -64,9 +73,7 @@ const page: React.FC = () => {
             <div className="mt-[30px]">
               <Textarea rows={10} className="px-[20px] py-[25px] bg-teal-500/10 rounded-[30px] border-2 border-teal-400 w-full" />
             </div>
-            <Button className="mt-[20px] rounded-full h-[40px]  px-[30px] bg-teal-600 hover:bg-teal-700">
-              Submit
-            </Button>
+            <Button className="mt-[20px] rounded-full h-[40px]  px-[30px] bg-teal-600 hover:bg-teal-700">Submit</Button>
           </form>
         </div>
       </div>

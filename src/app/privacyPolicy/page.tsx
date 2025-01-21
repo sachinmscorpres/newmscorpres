@@ -2,6 +2,15 @@
 import React from "react";
 import styled from "styled-components";
 
+export const metadata = {
+  title: "Privacy Policy | MsCorpres Automation",
+};
+
+export const Head = () => (
+  <>
+    <meta name="google-site-verification" content="KKOvYSdxhIKXdM5mcrwSqgylO-ZYk3OsBaAKfF59F0s" />
+  </>
+);
 const page: React.FC = () => {
   return (
     <Section>

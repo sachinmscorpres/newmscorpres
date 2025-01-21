@@ -5,6 +5,15 @@ import Blogcard from "@/components/shared/Blogcard";
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Blog | MsCorpres Automation",
+};
+
+export const Head = () => (
+  <>
+    <meta name="google-site-verification" content="KKOvYSdxhIKXdM5mcrwSqgylO-ZYk3OsBaAKfF59F0s" />
+  </>
+);
 const page: React.FC = () => {
   return (
     <BlogLayout>

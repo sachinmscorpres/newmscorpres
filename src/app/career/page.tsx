@@ -7,6 +7,15 @@ import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import JobSlider from "@/components/slider/JobSlider";
 
+export const metadata = {
+  title: "Careers | MsCorpres Automation",
+};
+
+export const Head = () => (
+  <>
+    <meta name="google-site-verification" content="KKOvYSdxhIKXdM5mcrwSqgylO-ZYk3OsBaAKfF59F0s" />
+  </>
+);
 const page: React.FC = () => {
   return (
     <Section>

@@ -4,7 +4,15 @@ import styled from "styled-components";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ServiceListSlider from "@/components/slider/ServiceListSlider";
 import ServiceSlider2 from "@/components/slider/ServiceSlider2";
+export const metadata = {
+  title: "Services | MsCorpres Automation",
+};
 
+export const Head = () => (
+  <>
+    <meta name="google-site-verification" content="KKOvYSdxhIKXdM5mcrwSqgylO-ZYk3OsBaAKfF59F0s" />
+  </>
+);
 const page: React.FC = () => {
   return (
     <Section>
