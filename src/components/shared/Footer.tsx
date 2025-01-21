@@ -2,10 +2,10 @@
 import Link from "next/link";
 import React from "react";
 import { FaLinkedin } from "react-icons/fa";
-import { FaTwitterSquare } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { PlaceholdersAndVanishInput } from "../ui/placeholders-and-vanish-input";
 import Image from "next/image";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer: React.FC = () => {
   const placeholders = ["What's the first rule of Fight Club?", "Who is Tyler Durden?", "Where is Andrew Laeddis Hiding?", "Write a Javascript method to reverse a string", "How to assemble your own PC?"];
@@ -39,10 +39,10 @@ const Footer: React.FC = () => {
             <Link href="/about" className="text-sm">
               About
             </Link>
-            <Link href="/services" className="text-sm">
+            <Link href="/blog" className="text-sm">
               Blogs
             </Link>
-            <Link href="/contact" className="text-sm">
+            <Link href="/career" className="text-sm">
               Career
             </Link>
           </div>
@@ -50,13 +50,13 @@ const Footer: React.FC = () => {
         <div className="py-[50px]">
           <h4 className="text-[19px] font-[600] text-slate-600">Legal</h4>
           <div className="flex flex-col gap-[20px] mt-[20px]">
-            <Link href="/" className="text-sm">
+            <Link href="/services" className="text-sm">
               Service
             </Link>
-            <Link href="/about" className="text-sm">
+            <Link href="/termsServices" className="text-sm">
               Terms Of services
             </Link>
-            <Link href="/services" className="text-sm">
+            <Link href="/privacyPolicy" className="text-sm">
               Privacy Policy
             </Link>
             <Link href="/contact" className="text-sm">
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
                 <FaLinkedin size={25} />
               </a>
               <a href="" className="text-slate-600 hover:text-teal-600">
-                <FaTwitterSquare size={25} />
+                <FaXTwitter size={25} />
               </a>
               <a href="" className="text-slate-600 hover:text-teal-600">
                 <FaFacebookSquare size={25} />

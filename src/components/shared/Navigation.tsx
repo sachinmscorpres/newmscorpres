@@ -15,9 +15,7 @@ const Navigation: React.FC = () => {
   const handleopenDialog = () => {
     setOpenDialog(true);
   };
-  const handlecloseDialog = () => {
-    setOpenDialog(false);
-  };
+
   return (
     <>
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>
