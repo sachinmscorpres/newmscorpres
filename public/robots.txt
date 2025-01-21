@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://newmscorpres.vercel.app/
+
+# Sitemaps
+Sitemap: https://newmscorpres.vercel.app/sitemap.xml
