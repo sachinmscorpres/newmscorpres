@@ -6,13 +6,12 @@ import "swiper/css/navigation";
 import { Autoplay, FreeMode, Pagination, Navigation } from "swiper/modules";
 import "swiper/css/free-mode";
 import styled from "styled-components";
-import { Card, CardDescription, CardTitle } from "../ui/card-hover-effect";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 const AboutMsSlider = () => {
   return (
     <Wrapper>
       <Swiper
-        
         breakpoints={{
           300: {
             slidesPerView: 1,
@@ -53,35 +52,43 @@ const AboutMsSlider = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <Card className="bg-teal-600 ">
-            <CardTitle className="text-white text-2xl">Let&apos;s Win Together</CardTitle>
-            <CardDescription className="text-slate-200">
+          <Card className="bg-[url('/tealgr.jpg')] bg-cover bg-center bg-no-repeat hover:bg-left-bottom">
+            <CardHeader>
+              <CardTitle className="text-white text-2xl">Let&apos;s Win Together</CardTitle>
+            </CardHeader>
+            <CardContent className="text-slate-200">
               Their experiences show how much they rely on our quick solutions, and the growth we&apos;ve achieved together stands as proof of our solid partnerships. Their stories are not just about what we&apos;ve done—they&apos;re about how fast we&apos;ve done it. READ MORE
-            </CardDescription>
+            </CardContent>
           </Card>
         </SwiperSlide>
         <SwiperSlide>
-          <Card className="bg-teal-600 ">
-            <CardTitle className="text-white text-2xl">Let&apos;s Win Together</CardTitle>
-            <CardDescription className="text-slate-200">
+          <Card className="bg-[url('/tealgr.jpg')] bg-cover bg-center bg-no-repeat hover:bg-left-bottom">
+            <CardHeader>
+              <CardTitle className="text-white text-2xl">Let&apos;s Win Together</CardTitle>
+            </CardHeader>
+            <CardContent className="text-slate-200">
               Their experiences show how much they rely on our quick solutions, and the growth we&apos;ve achieved together stands as proof of our solid partnerships. Their stories are not just about what we&apos;ve done—they&apos;re about how fast we&apos;ve done it. READ MORE
-            </CardDescription>
+            </CardContent>
           </Card>
         </SwiperSlide>
         <SwiperSlide>
-          <Card className="bg-teal-600 ">
-            <CardTitle className="text-white text-2xl">Let&apos;s Win Together</CardTitle>
-            <CardDescription className="text-slate-200">
+          <Card className="bg-[url('/tealgr.jpg')] bg-cover bg-center bg-no-repeat hover:bg-left-bottom">
+            <CardHeader>
+              <CardTitle className="text-white text-2xl">Let&apos;s Win Together</CardTitle>
+            </CardHeader>
+            <CardContent className="text-slate-200">
               Their experiences show how much they rely on our quick solutions, and the growth we&apos;ve achieved together stands as proof of our solid partnerships. Their stories are not just about what we&apos;ve done—they&apos;re about how fast we&apos;ve done it. READ MORE
-            </CardDescription>
+            </CardContent>
           </Card>
         </SwiperSlide>
         <SwiperSlide>
-          <Card className="bg-teal-600 ">
-            <CardTitle className="text-white text-2xl">Let&apos;s Win Together</CardTitle>
-            <CardDescription className="text-slate-200">
+          <Card className="bg-[url('/tealgr.jpg')] bg-cover bg-center bg-no-repeat hover:bg-left-bottom">
+            <CardHeader>
+              <CardTitle className="text-white text-2xl">Let&apos;s Win Together</CardTitle>
+            </CardHeader>
+            <CardContent className="text-slate-200">
               Their experiences show how much they rely on our quick solutions, and the growth we&apos;ve achieved together stands as proof of our solid partnerships. Their stories are not just about what we&apos;ve done—they&apos;re about how fast we&apos;ve done it. READ MORE
-            </CardDescription>
+            </CardContent>
           </Card>
         </SwiperSlide>
       </Swiper>
