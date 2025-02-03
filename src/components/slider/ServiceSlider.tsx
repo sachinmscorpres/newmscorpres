@@ -13,10 +13,9 @@ const ServiceSlider = () => {
     <Slider className="rounded shadow-md py-[10px] ">
       <Swiper
         spaceBetween={30}
-        centeredSlides={true}
         autoplay={{
           delay: 5000,
-          disableOnInteraction: false,
+          disableOnInteraction: true,
         }}
         pagination={{
           clickable: true,

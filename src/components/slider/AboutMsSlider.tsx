@@ -52,7 +52,7 @@ const AboutMsSlider = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <Card className="bg-[url('/tealgr.jpg')] bg-cover bg-center bg-no-repeat hover:bg-left-bottom">
+          <Card className="bg-teal-500 bg-cover bg-center bg-no-repeat hover:bg-left-bottom">
             <CardHeader>
               <CardTitle className="text-white text-2xl">Let&apos;s Win Together</CardTitle>
             </CardHeader>
@@ -62,7 +62,7 @@ const AboutMsSlider = () => {
           </Card>
         </SwiperSlide>
         <SwiperSlide>
-          <Card className="bg-[url('/tealgr.jpg')] bg-cover bg-center bg-no-repeat hover:bg-left-bottom">
+          <Card className="bg-teal-500 bg-cover bg-center bg-no-repeat hover:bg-left-bottom">
             <CardHeader>
               <CardTitle className="text-white text-2xl">Let&apos;s Win Together</CardTitle>
             </CardHeader>
@@ -72,7 +72,7 @@ const AboutMsSlider = () => {
           </Card>
         </SwiperSlide>
         <SwiperSlide>
-          <Card className="bg-[url('/tealgr.jpg')] bg-cover bg-center bg-no-repeat hover:bg-left-bottom">
+          <Card className="bg-teal-500 bg-cover bg-center bg-no-repeat hover:bg-left-bottom">
             <CardHeader>
               <CardTitle className="text-white text-2xl">Let&apos;s Win Together</CardTitle>
             </CardHeader>
@@ -82,7 +82,7 @@ const AboutMsSlider = () => {
           </Card>
         </SwiperSlide>
         <SwiperSlide>
-          <Card className="bg-[url('/tealgr.jpg')] bg-cover bg-center bg-no-repeat hover:bg-left-bottom">
+          <Card className="bg-teal-500 bg-cover bg-center bg-no-repeat hover:bg-left-bottom">
             <CardHeader>
               <CardTitle className="text-white text-2xl">Let&apos;s Win Together</CardTitle>
             </CardHeader>

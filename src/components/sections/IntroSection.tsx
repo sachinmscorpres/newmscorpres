@@ -83,7 +83,7 @@ const IntroSection: React.FC = () => {
           <div className="flex items-center justify-center">
             <div className="w-[400px] h-[400px] relative rounded-full">
               <Image alt="" width={400} height={400} src="/circle.svg" className="animate-slowSpin rounded-full w-full h-full" />
-              <div className="card bg-[url('/tealgr.jpg')] bg-cover bg-center bg-no-repeat top-[50px] bottom-[50px] left-[50px] right-[50px] absolute z-[1] rounded-br-[100px] rounded-tr-[50px] rounded-tl-[50px] p-[20px] text-white flex items-center justify-center">{renderContent(active)}</div>
+              <div className="card bg-teal-500 bg-cover bg-center bg-no-repeat top-[50px] bottom-[50px] left-[50px] right-[50px] absolute z-[1] rounded-br-[100px] rounded-tr-[50px] rounded-tl-[50px] p-[20px] text-white flex items-center justify-center">{renderContent(active)}</div>
             </div>
           </div>
           <div className="flex flex-col justify-between h-full items-start py-[100px]">
@@ -114,7 +114,7 @@ const IntroSection: React.FC = () => {
         <div className="flex items-center justify-center">
           <div className="w-[400px] h-[400px] relative rounded-full">
             <Image alt="" width={400} height={400} src="/circle.svg" className="animate-slowSpin rounded-full w-full h-full" />
-            <div className="card bg-[url('/tealgr.jpg')] bg-cover bg-center bg-no-repeat  top-[50px] bottom-[50px] left-[30px] right-[30px] absolute z-[1] rounded-br-[100px] rounded-tr-[50px] rounded-tl-[50px] p-[20px] text-white flex items-center justify-center">{renderContent(active)}</div>
+            <div className="card bg-teal-500 bg-cover bg-center bg-no-repeat  top-[50px] bottom-[50px] left-[30px] right-[30px] absolute z-[1] rounded-br-[100px] rounded-tr-[50px] rounded-tl-[50px] p-[20px] text-white flex items-center justify-center">{renderContent(active)}</div>
           </div>
         </div>
       </div>

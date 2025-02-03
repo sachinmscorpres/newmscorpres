@@ -9,6 +9,9 @@ import { Card } from "../ui/card-hover-effect";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import "swiper/css/autoplay";
 import Image from "next/image";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { testimonialData } from "@/data";
+
 const ClientReviewsSection: React.FC = () => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
@@ -22,7 +25,7 @@ const ClientReviewsSection: React.FC = () => {
           <div className="flex  gap-[20px] mt-[20px]">
             <div className="relative rounded-md overflow-hidden border w-[300px] lg:h-[300px] md:h-[300px] h-auto">
               <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrg2YUhElZZVIYyQXBMPcca-fSpWLJoOtplw&s" alt="" layout="responsive" width={300} height={300} />
-              <div className="absolute bottom-0 left-0 right-0 p-[5px] bg-teal-600/40 rounded-md text-white flex items-center justify-center">Sachin</div>
+              <div className="absolute bottom-0 left-0 right-0 p-[5px] bg-teal-600 rounded-md text-white flex items-center justify-center">Sachin</div>
             </div>
             <div className="flex flex-col justify-between bg-teal-100 p-[10px] rounded-full">
               <button ref={prevRef} className="custom-prev-btn rounded-full bg-teal-600 p-[3px] text-white">
@@ -65,9 +68,9 @@ const ClientReviewsSection: React.FC = () => {
             }}
             autoplay={{
               delay: 3000,
-              disableOnInteraction: false,
+              disableOnInteraction: true,
             }}
-            className="max-h-[350px]"
+            className="max-h-[400px]"
             direction="vertical"
             modules={[Navigation, Autoplay]}
             loop={true}
@@ -82,66 +85,35 @@ const ClientReviewsSection: React.FC = () => {
             slidesPerView={1}
             spaceBetween={10}
           >
-            <SwiperSlide>
-              <Card className="slide-content  border-teal-600 border-2  bg-white  gap-[20px]">
-                <div className="flex justify-between">
-                  <div>
-                    <Quote size={30} />
-                    <h4 className="font-[600]">CEO, Shishir Gupta,</h4>
-                    <h5 className="font-[600]">Oakter</h5>
-                    <p className="text-slate-500">
-                      We have been working with MsCorpres for more than 4 years. Its a delight working with the team. They very efficiently <span className="text-teal-600">Read More...</span>
-                    </p>
+            {testimonialData.map((item, i) => (
+              <SwiperSlide key={i}>
+                <Card className="slide-content  border-teal-600 border-2  bg-white  gap-[20px]">
+                  <div className="flex justify-between">
+                    <div>
+                      <Quote size={30} />
+                      <h4 className="font-[600]">{item?.name}</h4>
+                      <h5 className="font-[600]">{item?.bio}</h5>
+                      <p className="text-slate-500">{item?.description?.slice(0, 100)}</p>
+                      <Dialog>
+                        <DialogTrigger className="text-teal-600">read more</DialogTrigger>
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle>{item.name}</DialogTitle>
+                            <DialogDescription>{item.description}</DialogDescription>
+                          </DialogHeader>
+                        </DialogContent>
+                      </Dialog>
+                    </div>
+                    <div>
+                      <Avatar className="w-[60px] h-[60px]">
+                        <AvatarImage src="https://github.com/shadcn.png" />
+                        <AvatarFallback>CN</AvatarFallback>
+                      </Avatar>
+                    </div>
                   </div>
-                  <div>
-                    <Avatar className="w-[60px] h-[60px]">
-                      <AvatarImage src="https://github.com/shadcn.png" />
-                      <AvatarFallback>CN</AvatarFallback>
-                    </Avatar>
-                  </div>
-                </div>
-              </Card>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card className="slide-content  border-teal-600 border-2  bg-white  gap-[20px]">
-                <div className="flex justify-between">
-                  <div>
-                    <Quote size={30} />
-                    <h4 className="font-[600]">CEO, Shishir Gupta,</h4>
-                    <h5 className="font-[600]">Oakter</h5>
-                    <p className="text-slate-500">
-                      We have been working with MsCorpres for more than 4 years. Its a delight working with the team. They very efficiently <span className="text-teal-600">Read More...</span>
-                    </p>
-                  </div>
-                  <div>
-                    <Avatar className="w-[60px] h-[60px]">
-                      <AvatarImage src="https://github.com/shadcn.png" />
-                      <AvatarFallback>CN</AvatarFallback>
-                    </Avatar>
-                  </div>
-                </div>
-              </Card>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card className="slide-content  border-teal-600 border-2  bg-white  gap-[20px]">
-                <div className="flex justify-between">
-                  <div>
-                    <Quote size={30} />
-                    <h4 className="font-[600]">CEO, Shishir Gupta,</h4>
-                    <h5 className="font-[600]">Oakter</h5>
-                    <p className="text-slate-500">
-                      We have been working with MsCorpres for more than 4 years. Its a delight working with the team. They very efficiently <span className="text-teal-600">Read More...</span>
-                    </p>
-                  </div>
-                  <div>
-                    <Avatar className="w-[60px] h-[60px]">
-                      <AvatarImage src="https://github.com/shadcn.png" />
-                      <AvatarFallback>CN</AvatarFallback>
-                    </Avatar>
-                  </div>
-                </div>
-              </Card>
-            </SwiperSlide>
+                </Card>
+              </SwiperSlide>
+            ))}
           </Swiper>
           <div className="py-[30px]">
             <Marquee>

@@ -1,15 +1,35 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import styled from "styled-components";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { axiosInstance } from "@/utils/axiosInstance";
 
 type Props = {
   children: React.ReactNode;
 };
 const BlogLayout: React.FC<Props> = ({ children }) => {
+  const [category, setCategory] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+  console.log(loading)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axiosInstance.get(`/blog/fetchCategory`);
+        setCategory(response.data?.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+  console.log(category);
   return (
     <Section>
       <div className="header h-[80vh] flex items-center justify-center bg-center bg-cover">
@@ -17,13 +37,15 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
           <h1 className="lg:text-5xl text-3xl font-bold text-center text-teal-400">Blog</h1>
           <p className="text-center text-white">Empowering productivity and efficiency with cutting-edge solutions—welcome to the future of work</p>
           <Select>
-            <SelectTrigger className="w-[300px] bg-white rounded-full">
+            <SelectTrigger className="w-[300px] bg-white rounded-full h-[50px]">
               <SelectValue placeholder="Select Category" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
+              {category?.map((item: any) => (
+                <SelectItem key={item?._id} value={item?._id}>
+                  {item?.name}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
         </div>

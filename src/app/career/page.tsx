@@ -27,15 +27,15 @@ const page: React.FC = () => {
             <h3 className="text-white font-bold lg:text-2xl text-[17px]">7 Open Roles</h3>
             <div>
               <div className="max-w-max relative">
-                <Input type="text" placeholder="Search..." className="lg:min-w-[350px] min-w-[300px] rounded-full bg-white pr-[50px]" />
-                <Button variant="ghost" className="absolute right-0 top-0 rounded-full">
+                <Input type="text" placeholder="Search..." className="lg:min-w-[350px] min-w-[300px] rounded-full bg-white pr-[50px] h-[50px]" />
+                <Button variant="ghost" className="absolute right-0 h-[50px] top-0 rounded-full">
                   <Search />
                 </Button>
               </div>
             </div>
             <div className="flex lg:flex-nowrap flex-wrap items-center justify-center gap-[20px]">
               <Select>
-                <SelectTrigger className="w-[300px] bg-white rounded-full">
+                <SelectTrigger className="w-[300px] bg-white rounded-full h-[50px]">
                   <SelectValue placeholder="Job Title" />
                 </SelectTrigger>
                 <SelectContent>
@@ -45,7 +45,7 @@ const page: React.FC = () => {
                 </SelectContent>
               </Select>
               <Select>
-                <SelectTrigger className="w-[300px] bg-white rounded-full">
+                <SelectTrigger className="w-[300px] bg-white rounded-full h-[50px]">
                   <SelectValue placeholder="Department" />
                 </SelectTrigger>
                 <SelectContent>

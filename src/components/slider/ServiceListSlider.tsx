@@ -43,11 +43,11 @@ const ServiceListSlider = () => {
         pagination={{
           clickable: true,
         }}
-        slidesPerView={7}
+       
         spaceBetween={60}
         autoplay={{
           delay: 2000,
-          disableOnInteraction: false,
+          disableOnInteraction: true,
         }}
         loop={true}
         modules={[Autoplay, FreeMode, Pagination, Navigation]}

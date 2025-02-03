@@ -8,7 +8,7 @@ import Image from "next/image";
 import { FaXTwitter } from "react-icons/fa6";
 
 const Footer: React.FC = () => {
-  const placeholders = ["What's the first rule of Fight Club?", "Who is Tyler Durden?", "Where is Andrew Laeddis Hiding?", "Write a Javascript method to reverse a string", "How to assemble your own PC?"];
+  const placeholders = ["Enter your email", "Enter your email", "Enter your email"];
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
   };
