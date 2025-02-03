@@ -3,14 +3,33 @@ import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const Blogcard = () => {
+type Props = {
+  data: {
+    _id: string;
+    title: string;
+    content: string;
+    author: {
+      _id: string;
+      fullName: string;
+    };
+    categories: string[];
+    tags: string[];
+    thumbnail: string;
+    metaDescription: string;
+    createdAt: string;
+    updatedAt: string;
+    slug: string;
+    timeAgo: string;
+  };
+};
+const Blogcard: React.FC<Props> = ({ data }) => {
   return (
     <Card className="bg-white overflow-hidden ">
-      <Image src={"/hero.svg"} alt="service1" width={200} height={200} layout="responsive" className="" />
+      <Image src={data.thumbnail||""} alt="service1" width={200} height={200} layout="responsive" className="" />
       <CardContent className="text-slate-600 pt-[10px] space-y-2">
-        <p className="text-sm text-gray-400">January 17, 2024</p>
-        <CardTitle className="text-slate-600 text-2xl">Let&apos;s Win Together</CardTitle>
-        Their experiences show how much they rely on our quick solutions, and the growth we&apos;ve achieved together stands as proof of our solid partnerships. Their stories are not just about what
+        <p className="text-sm text-gray-400">{data.timeAgo}</p>
+        <CardTitle className="text-slate-600 text-2xl">{data.title}</CardTitle>
+        {data.metaDescription}{" "}
       </CardContent>
       <CardFooter className="flex gap-[10px]">
         <Avatar>

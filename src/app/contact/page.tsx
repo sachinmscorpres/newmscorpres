@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
@@ -7,8 +7,52 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Head from "next/head";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { FaSpinner } from "react-icons/fa";
+import axios from "axios";
 
-const page: React.FC = () => {
+const schema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().min(10, "Phone number must be at least 10 digits"),
+  subject: z.string().min(1, "Subject is required"),
+  message: z.string().min(5, "Message must be at least 5 characters"),
+});
+
+const ContactPage: React.FC = () => {
+  const [loading, setLoading] = useState<boolean>(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<z.infer<typeof schema>>({
+    resolver: zodResolver(schema),
+  });
+
+  const onSubmit = async (data: any) => {
+    try {
+      setLoading(true);
+      const response = await axios.post(`https://msclientcontact.mscorpres.net/contactUsMsC/contactUsMsC`, {
+        userName: data.name,
+        userEmail: data.email,
+        userPhone: data.phone,
+        sub: data.subject,
+        msg: data.message,
+      });
+      if (response.status === 200) {
+        reset();
+        alert("Message sent successfully!");
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -62,17 +106,32 @@ const page: React.FC = () => {
             <div className="w-[300px] h-[300px] absolute right-[-100px] bottom-[-200px] border-[15px] border-teal-200/30 rounded-full"></div>
           </div>
           <div className="w-full ">
-            <form action="">
+            <form action="" onSubmit={handleSubmit(onSubmit)}>
               <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-[30px] gap-[20px]">
-                <Input className="px-[20px] py-[25px] bg-teal-500/10 rounded-full border-2 border-teal-400 w-full" placeholder="Name" />
-                <Input className="px-[20px] py-[25px] bg-teal-500/10 rounded-full border-2 border-teal-400 w-full" placeholder="Email" />
-                <Input className="px-[20px] py-[25px] bg-teal-500/10 rounded-full border-2 border-teal-400 w-full" placeholder="Phone no." />
-                <Input className="px-[20px] py-[25px] bg-teal-500/10 rounded-full border-2 border-teal-400 w-full" placeholder="Subject" />
+                <div>
+                  <Input {...register("name", { required: true })} className="px-[20px] py-[25px] bg-teal-500/10 rounded-full border-2 border-teal-400 w-full" placeholder="Name" />
+                  {errors.name?.message && <p className="text-red-500">{errors.name.message}</p>}
+                </div>
+                <div>
+                  <Input {...register("email", { required: true })} className="px-[20px] py-[25px] bg-teal-500/10 rounded-full border-2 border-teal-400 w-full" placeholder="Email" />
+                  {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+                </div>
+                <div>
+                  <Input {...register("phone", { required: true })} className="px-[20px] py-[25px] bg-teal-500/10 rounded-full border-2 border-teal-400 w-full" placeholder="Phone no." />
+                  {errors.phone && <p className="text-red-500">{errors.phone.message}</p>}
+                </div>
+                <div>
+                  <Input {...register("subject", { required: true })} className="px-[20px] py-[25px] bg-teal-500/10 rounded-full border-2 border-teal-400 w-full" placeholder="Subject" />
+                  {errors.subject && <p className="text-red-500">{errors.subject.message}</p>}
+                </div>
               </div>
               <div className="mt-[30px]">
-                <Textarea rows={10} className="px-[20px] py-[25px] bg-teal-500/10 rounded-[30px] border-2 border-teal-400 w-full" />
+                <Textarea placeholder="Message" {...register("message", { required: true })} rows={10} className="px-[20px] py-[25px] bg-teal-500/10 rounded-[30px] border-2 border-teal-400 w-full" />
+                {errors.message && <p className="text-red-500">{errors.message.message}</p>}
               </div>
-              <Button className="mt-[20px] rounded-full h-[40px]  px-[30px] bg-teal-600 hover:bg-teal-700">Submit</Button>
+              <Button disabled={loading} type="submit" className="mt-[20px] rounded-full h-[40px]  px-[30px] bg-teal-600 hover:bg-teal-700">
+                {loading && <FaSpinner className="animate-spin" />} Submit
+              </Button>
             </form>
           </div>
         </div>
@@ -81,4 +140,4 @@ const page: React.FC = () => {
   );
 };
 const Section = styled.section``;
-export default page;
+export default ContactPage;

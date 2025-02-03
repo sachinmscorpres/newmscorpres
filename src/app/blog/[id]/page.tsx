@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { axiosInstance } from "@/utils/axiosInstance";
+import parse from "html-react-parser";
 interface BlogPostPageProps {
   params: Promise<{ id: string }>;
 }
@@ -264,8 +266,27 @@ const Article = styled.article`
 
 export default function BlogPost({ params }: BlogPostPageProps) {
   const { id } = React.use(params);
-  console.log(id);
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  console.log(loading)
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axiosInstance.get(`/blog/${id}`);
+        setData(response.data?.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (!data) {
+      fetchData();
+    }
+  }, []);
   const router = useRouter();
+  console.log(data);
   return (
     <BlogLayout>
       <div>
@@ -274,141 +295,31 @@ export default function BlogPost({ params }: BlogPostPageProps) {
         </Button>
       </div>
       <Article>
-        <Image src={"https://res.cloudinary.com/hrmscloud/image/upload/f_auto,q_auto/msc%20kk?_a=AMAACLR0"} alt="hero" width={800} height={400} layout="responsive" />
+        <Image src={data?.thumbnail} alt="hero" width={800} height={400} layout="responsive" />
         <Head>
-          <title>Comprehensive Blog Post</title>
+          <title>{data?.title}</title>
           <meta name="description" content="Comprehensive dummy blog post for testing CSS styles" />
           <meta name="google-site-verification" content="KKOvYSdxhIKXdM5mcrwSqgylO-ZYk3OsBaAKfF59F0s" />
         </Head>
         <article>
           <header>
-            <h1>Comprehensive Blog Post Title</h1>
+            <h1>{data?.title}</h1>
             <p>
-              <time dateTime="2025-01-17">January 17, 2025</time> | Written by <a href="#">Author Name</a>
+              <time dateTime={data?.createdAt}>{data?.createdAt}</time> | Written by <a href="#">{data?.author?.fullName}</a>
             </p>
           </header>
-          <main>
-            {/* Introduction */}
-            <section>
-              <p>Welcome to this comprehensive dummy blog post. This document includes all key HTML elements to help you test and style your blog layout.</p>
-            </section>
-
-            {/* Headings */}
-            <section>
-              <h2>Section Heading 1</h2>
-              <p>This is a paragraph under a second-level heading.</p>
-              <h3>Subheading Level 2</h3>
-              <p>This is a paragraph under a third-level subheading.</p>
-              <h4>Subheading Level 3</h4>
-              <p>This is a paragraph under a fourth-level subheading.</p>
-            </section>
-
-            {/* Text Styles */}
-            <section>
-              <h2>Text Styles</h2>
-              <p>
-                This is <strong>bold text</strong>, and this is <em>italic text</em>. You can also use <u>underlined text</u> for emphasis.
-              </p>
-              <p>
-                Here&apos;s an example of <mark>highlighted text</mark>, and here’s <del>strikethrough text</del>.
-              </p>
-            </section>
-
-            {/* Lists */}
-            <section>
-              <h2>Lists</h2>
-              <ul>
-                <li>Unordered List Item 1</li>
-                <li>Unordered List Item 2</li>
-                <li>Unordered List Item 3</li>
-              </ul>
-              <ol>
-                <li>Ordered List Item 1</li>
-                <li>Ordered List Item 2</li>
-                <li>Ordered List Item 3</li>
-              </ol>
-            </section>
-
-            {/* Blockquote */}
-            <section>
-              <h2>Blockquote</h2>
-              <blockquote>
-                &quot;This is an example of a blockquote. It is used to highlight important quotes or excerpts.&quot;
-                <footer>— Someone Famous</footer>
-              </blockquote>
-            </section>
-
-            {/* Code */}
-            <section>
-              <h2>Code and Preformatted Text</h2>
-              <p>
-                Here’s an inline code snippet: <code>console.log(&apos;Hello, World!&apos;);</code>
-              </p>
-              <pre>
-                <code>
-                  {`function greet() {
-  console.log("Hello, World!");
-}`}
-                </code>
-              </pre>
-            </section>
-
-            {/* Images */}
-            <section>
-              <h2>Image with Caption</h2>
-              <figure>
-                <figcaption>This is a sample image caption.</figcaption>
-              </figure>
-            </section>
-
-            {/* Tables */}
-            <section>
-              <h2>Table Example</h2>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Column 1</th>
-                    <th>Column 2</th>
-                    <th>Column 3</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Row 1, Col 1</td>
-                    <td>Row 1, Col 2</td>
-                    <td>Row 1, Col 3</td>
-                  </tr>
-                  <tr>
-                    <td>Row 2, Col 1</td>
-                    <td>Row 2, Col 2</td>
-                    <td>Row 2, Col 3</td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
-
-            {/* Horizontal Rule */}
-            <section>
-              <h2>Horizontal Rule</h2>
-              <p>Below is an example of a horizontal rule:</p>
-              <hr />
-            </section>
-
-            {/* Links */}
-            <section>
-              <h2>Links</h2>
-              <p>
-                Visit{" "}
-                <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-                  this link
-                </a>{" "}
-                to learn more.
-              </p>
-            </section>
-          </main>
+          <main>{data && parse(data?.content || null)}</main>
           <footer>
             <p>
-              Tags: <a href="#">HTML</a>, <a href="#">CSS</a>, <a href="#">Blog</a>
+              Tags:
+              {data?.tags.map((tag: string) => (
+                <>
+                  <a href="#" key={tag}>
+                    {tag}
+                  </a>{" "}
+                  ,
+                </>
+              ))}
             </p>
             <p>
               Share this post:

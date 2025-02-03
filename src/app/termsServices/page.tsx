@@ -12,7 +12,6 @@ const page: React.FC = () => {
         <meta name="description" content="Review our Terms of Service to understand your rights and obligations while using our services." />
         <meta name="keywords" content="Terms of Service, MsCorpres Policies, User Agreement" />
       </Head>
-
       <Section>
         {" "}
         <div className="container">
